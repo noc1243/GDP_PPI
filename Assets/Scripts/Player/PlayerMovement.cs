@@ -63,7 +63,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private Boolean houveMovimento () {
+    private bool houveMovimento () {
+        if (!controller.isGrounded) {
+            return false;
+        }
+
         float vertical = Input.GetAxis ("Vertical");
         float horizontal = Input.GetAxis ("Horizontal");
 
